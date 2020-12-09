@@ -6,7 +6,7 @@ buildscript {
       mavenCentral()
     }
     dependencies {
-        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.3.0.RELEASE')
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.2.1.RELEASE')
     }
 }
 
@@ -35,6 +35,10 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-bootBuildImage {
-	imageName = "sample/gs-spring-boot-docker"
+task bootDependencies(type: Copy) {
+    def zipFile = file("${buildDir}/libs/${bootJar.baseName}-${bootJar.version}.jar")
+    def outputDir = file("${buildDir}/dependency")
+ 
+    from zipTree(zipFile)
+    into outputDir
 }

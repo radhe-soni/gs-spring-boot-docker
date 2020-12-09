@@ -8,6 +8,6 @@ Steps to run
 - run `apk add openjdk8`
 - run `git clone https://github.com/radhe-soni/gs-spring-boot-docker.git`
 - run `cd gs-spring-boot-docker`
-- run `gradlew build`
+- run `./gradlew build`
 - run `cd complete`
 - run `docker build -t myorg/myapp .`

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec java $1 -jar /app.jar
+exec java -cp app:app/lib/* $1 hello.Application
