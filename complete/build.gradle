@@ -35,3 +35,6 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
+bootBuildImage {
+	imageName = "sample/gs-spring-boot-docker"
+}
