@@ -42,3 +42,8 @@ task bootDependencies(type: Copy) {
     from zipTree(zipFile)
     into outputDir
 }
+
+task buildImage(type: Exec, dependsOn: bootDependencies){
+    workingDir '${projectDir}'
+    commandLine './build-image.sh'
+}
