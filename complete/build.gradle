@@ -44,6 +44,8 @@ task bootDependencies(type: Copy) {
 }
 
 task buildImage(type: Exec, dependsOn: bootDependencies){
-    workingDir '${projectDir}'
+    environment System.getenv() + [version: "0.0.1"]
+    workingDir "${projectDir}"
     commandLine './build-image.sh'
+   
 }
